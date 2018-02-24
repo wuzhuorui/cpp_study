@@ -12,49 +12,49 @@ class DerivedClass :public BaseClass {
 public:
 	void UsePublicInt()
 	{
-		public_int = 1; //ÕıÈ·
+		public_int = 1; //æ­£ç¡®
 	}
 	void UserPrivateInt()
 	{
-		private_int = 1;//´íÎó:³ÉÔ± BaseClass::private_int²»¿É·ÃÎÊ
+		private_int = 1;//é”™è¯¯:æˆå‘˜ BaseClass::private_intä¸å¯è®¿é—®
 	}
 	void UserProtectedInt()
 	{
-		protected_int = 1; //ÕıÈ· 
+		protected_int = 1; //æ­£ç¡® 
 	}
 };
 
-//protected ¶ÔProtectedDerivedClassµÄÅÉÉúÀàºÍÓÃ»§ºÍÓÑÔªº¯Êı²úÉúÓ°Ïì,¶ÔProtectedDerivedClass×ÔÉíµÄ³ÉÔ±º¯ÊıÎŞÓ°Ïì
+//protected å¯¹ProtectedDerivedClassçš„æ´¾ç”Ÿç±»å’Œç”¨æˆ·å’Œå‹å…ƒå‡½æ•°äº§ç”Ÿå½±å“,å¯¹ProtectedDerivedClassè‡ªèº«çš„æˆå‘˜å‡½æ•°æ— å½±å“
 class ProtectedDerivedClass :protected BaseClass {
 public:
 	void UsePublicInt()
 	{
-		public_int = 1; //ÕıÈ· BaseClass::public_intÊÇ¹«ÓĞµÄ
+		public_int = 1; //æ­£ç¡® BaseClass::public_intæ˜¯å…¬æœ‰çš„
 	}
 	void UserPrivateInt()
 	{
-		private_int = 1;//´íÎó:³ÉÔ± BaseClass::private_int²»¿É·ÃÎÊ
+		private_int = 1;//é”™è¯¯:æˆå‘˜ BaseClass::private_intä¸å¯è®¿é—®
 	}
 	void UserProtectedInt()
 	{
-		protected_int = 1; //ÕıÈ· 
+		protected_int = 1; //æ­£ç¡® 
 	}
 };
 
 int main()
 {
 	BaseClass baseclass;
-	baseclass.public_int; //ÕıÈ·
-	baseclass.protected_int; //´íÎó:³ÉÔ± BaseClass::protected_int²»¿É·ÃÎÊ
-	baseclass.private_int; //´íÎó:³ÉÔ± BaseClass::private_int²»¿É·ÃÎÊ
+	baseclass.public_int; //æ­£ç¡®
+	baseclass.protected_int; //é”™è¯¯:æˆå‘˜ BaseClass::protected_intä¸å¯è®¿é—®
+	baseclass.private_int; //é”™è¯¯:æˆå‘˜ BaseClass::private_intä¸å¯è®¿é—®
 
 	DerivedClass derivedclass;
-	derivedclass.public_int;   //ÕıÈ·
-	derivedclass.protected_int; //´íÎó:³ÉÔ± BaseClass::protected_int²»¿É·ÃÎÊ
-	derivedclass.private_int; //´íÎó:³ÉÔ± BaseClass::private_int²»¿É·ÃÎÊ 
+	derivedclass.public_int;   //æ­£ç¡®
+	derivedclass.protected_int; //é”™è¯¯:æˆå‘˜ BaseClass::protected_intä¸å¯è®¿é—®
+	derivedclass.private_int; //é”™è¯¯:æˆå‘˜ BaseClass::private_intä¸å¯è®¿é—® 
 
 	ProtectedDerivedClass protectedderivedclass;
-	protectedderivedclass.public_int = 1;//´íÎó:³ÉÔ± BaseClass::public_int²»¿É·ÃÎÊ Ô­Òò ProtectedDerivedClass :protected DerivedClass,¶ÔProtectedDerivedClassµÄÓÃ»§¶øÑÔpublic_intÊÇprotectd,ËùÒÔÎŞ·¨·ÃÎÊ
-	protectedderivedclass.protected_int; //´íÎó:³ÉÔ± BaseClass::protected_int²»¿É·ÃÎÊ
-	protectedderivedclass.private_int; //´íÎó:³ÉÔ± BaseClass::private_int²»¿É·ÃÎÊ 
+	protectedderivedclass.public_int = 1;//é”™è¯¯:æˆå‘˜ BaseClass::public_intä¸å¯è®¿é—® åŸå›  ProtectedDerivedClass :protected DerivedClass,å¯¹ProtectedDerivedClassçš„ç”¨æˆ·è€Œè¨€public_intæ˜¯protectd,æ‰€ä»¥æ— æ³•è®¿é—®
+	protectedderivedclass.protected_int; //é”™è¯¯:æˆå‘˜ BaseClass::protected_intä¸å¯è®¿é—®
+	protectedderivedclass.private_int; //é”™è¯¯:æˆå‘˜ BaseClass::private_intä¸å¯è®¿é—® 
 }
